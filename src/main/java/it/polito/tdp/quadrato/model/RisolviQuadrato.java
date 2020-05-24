@@ -8,7 +8,7 @@ public class RisolviQuadrato {
 	private int N2 ; // numero di caselle (N^2)
 	private int magica ; // costante magica
 	
-	private List<List<Integer>> soluzioni;
+	private List<List<Integer>> soluzioni;   //lista che contiene la lista delle soluzioni ma ogni soluzione è una lista di interi
 	
 	public RisolviQuadrato(int N) {
 		this.N = N ;
@@ -36,7 +36,9 @@ public class RisolviQuadrato {
 			if(controlla(parziale)) {
 				// è magico!!
 				System.out.println(parziale) ;
-				this.soluzioni.add(new ArrayList<>(parziale)) ;
+				this.soluzioni.add(new ArrayList<>(parziale)) ;  //creo una copia di parziale
+			//	this.soluzioni.add(e); sto salvando il riferimento a parziale perchè man mano che
+				//scende si riempie ma poi si svouta ecco perchè stampava le liste vuote
 			}
 			return ;
 		}
